@@ -87,3 +87,20 @@ Then open: `http://localhost:8000`
 ---
 
 This scaffold is designed to be easy to extend while keeping a calm, elegant base style.
+
+
+## Troubleshooting `Not Found`
+
+If you see a blank white page with `Not Found`, it usually means the server is not pointing at this project root or your static host is serving a missing route.
+
+- Confirm `index.html` exists in the published root directory.
+- Preview locally from this folder (not a parent folder):
+
+```bash
+python3 -m http.server 8000
+```
+
+Then open `http://localhost:8000/index.html`.
+
+For static hosting fallback, this repo also includes `404.html` matching `index.html`, so hosts like GitHub Pages can still render the single-page shell when a route misses.
+
